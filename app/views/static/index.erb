@@ -1,2 +1,22 @@
-<h1>Hello World</h1>
+<h1>Hello Welcome to Happy Cow</h1>
 <p>See Me in views/static/index.html.erb</p>
+<% @msg if @msg %>
+
+
+<form action="/urls" method="post">
+Enter URL:
+<input type ="text" name="original">
+<input type="submit" value="Submit">
+
+</form>
+
+
+<table id="table1">
+
+	<% @urls.each do |x|%>
+	<tr>
+		<td><%= x.original %></td>
+		<td><%= x.shorten %></td>
+	</tr>
+	<% end %>
+</table>
